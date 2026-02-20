@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sa'ad Farooq — Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0f0a;
+      --surface: #131710;
+      --accent: #b5f23c;
+      --accent2: #3cf2a0;
+      --text: #e8ead4;
+      --muted: #6b7060;
+      --border: #1e2318;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(12, 15, 10, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      padding: 8rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-bottom: 2rem;
+      width: fit-content;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      max-width: 420px;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-right {
+      padding: 8rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .stat-row:nth-child(1) { animation-delay: 0.1s; }
+    .stat-row:nth-child(2) { animation-delay: 0.2s; }
+    .stat-row:nth-child(3) { animation-delay: 0.3s; }
+    .stat-row:nth-child(4) { animation-delay: 0.4s; }
+
+    .stat-label { color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .stat-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .project-card {
+      background: var(--bg);
+      padding: 2.5rem;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-card:hover { background: var(--surface); }
+
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .project-number {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .tag.highlight {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 1.5rem;
+    }
+
+    .project-link::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover .project-link::after { transform: translateX(4px); }
+
+    .featured-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated chart visual */
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 180px;
+      padding: 0 20px;
+    }
+
+    .bar {
+      width: 28px;
+      background: var(--accent);
+      opacity: 0.15;
+      border-radius: 2px 2px 0 0;
+      animation: barGrow 1s ease both;
+    }
+
+    .bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+    .bar:nth-child(2) { height: 85%; animation-delay: 0.2s; opacity: 0.3; }
+    .bar:nth-child(3) { height: 45%; animation-delay: 0.3s; }
+    .bar:nth-child(4) { height: 100%; animation-delay: 0.4s; background: var(--accent); opacity: 0.8; }
+    .bar:nth-child(5) { height: 70%; animation-delay: 0.5s; opacity: 0.25; }
+    .bar:nth-child(6) { height: 55%; animation-delay: 0.6s; }
+    .bar:nth-child(7) { height: 90%; animation-delay: 0.7s; opacity: 0.4; }
+
+    .chart-label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* SKILLS */
+    .skills-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .skill-cell {
+      background: var(--bg);
+      padding: 1.5rem;
+    }
+
+    .skill-name {
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-bar-bg {
+      height: 2px;
+      background: var(--border);
+      width: 100%;
+    }
+
+    .skill-bar-fill {
+      height: 2px;
+      background: var(--accent);
+      width: 0;
+      transition: width 1.5s ease;
+    }
+
+    .skill-bar-fill.animate { width: var(--fill); }
+
+    /* ABOUT / CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .contact-key { color: var(--muted); }
+    .contact-val a { color: var(--accent); text-decoration: none; }
+    .contact-val a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes barGrow {
+      from { transform: scaleY(0); transform-origin: bottom; }
+      to { transform: scaleY(1); transform-origin: bottom; }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 6rem 2rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-right { padding: 2rem; }
+      section { padding: 4rem 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: auto; grid-template-columns: 1fr; }
+      .featured-visual { display: none; }
+      .skills-section { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">SF</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="mailto:s4farooq@uwaterloo.ca">Hire Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="border-top: none; padding: 0;">
+    <div class="hero-left">
+      <span class="hero-tag">Available for opportunities</span>
+      <h1 class="hero-name">Sa'ad<br/><em>Farooq</em></h1>
+      <p class="hero-desc">
+        Combinatorics & Optimization student at University of Waterloo. I turn messy real-world data into actionable decisions — using ML, optimization, and clean Python.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="https://github.com/saadfarooq-alt" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-row">
+        <span class="stat-label">University</span>
+        <span class="stat-value">UW</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Major</span>
+        <span class="stat-value">C&O</span>
+      </div>
+      <div class="stat-row" style="flex-direction: column; gap: 1.2rem; align-items: flex-start;">
+        <span class="stat-label">Resume</span>
+        <a class="btn btn-primary" href="YOUR_RESUME_LINK_HERE" target="_blank" style="display:inline-flex; align-items:center; gap:8px;">
+          Download CV <span style="font-size:1rem;">↓</span>
+        </a>
+        <p style="color: var(--muted); font-size: 11px; line-height: 1.6;">Drop your resume PDF link above — e.g. a Google Drive or direct file link.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label fade-in">Selected Work</div>
+    <h2 class="section-title fade-in">Data-driven projects<br/>that actually ship.</h2>
+
+    <div class="projects-grid fade-in">
+
+      <!-- FEATURED -->
+      <a class="project-card featured" href="https://github.com/saadfarooq-alt/Hospital-Appointment-Optimizer" target="_blank">
+        <div>
+          <div class="project-number">01 — Featured</div>
+          <h3 class="project-title">Hospital Appointment Optimizer</h3>
+          <p class="project-desc">
+            End-to-end clinical scheduling system trained on 111,000 real-world patient appointments. Built a no-show prediction classifier using patient history, scheduling patterns, and demographic features — feeding predictions into a scheduling optimizer to reduce wasted clinical time.
+          </p>
+          <div class="project-tags">
+            <span class="tag highlight">Machine Learning</span>
+            <span class="tag highlight">Optimization</span>
+            <span class="tag">Python</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Classification</span>
+            <span class="tag">Healthcare</span>
+          </div>
+          <span class="project-link">View on GitHub</span>
+        </div>
+        <div class="featured-visual">
+          <span class="chart-label">No-show predictions</span>
+          <div class="chart-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- GUROBI -->
+      <a class="project-card" href="https://github.com/saadfarooq-alt/Gurobi_LP_GraphConverter" target="_blank">
+        <div class="project-number">02</div>
+        <h3 class="project-title">Gurobi LP Graph Converter</h3>
+        <p class="project-desc">
+          A visualization tool for Linear Programs using Gurobi — converts abstract LP formulations into interpretable graphs. Bridges the gap between optimization models and intuition for students and industry practitioners.
+        </p>
+        <div class="project-tags">
+          <span class="tag highlight">Optimization</span>
+          <span class="tag highlight">Visualization</span>
+          <span class="tag">Python</span>
+          <span class="tag">Gurobi</span>
+          <span class="tag">Linear Programming</span>
+        </div>
+        <span class="project-link">View on GitHub</span>
+      </a>
+
+      <!-- CO-OP SCRIPTS -->
+      <a class="project-card" href="https://github.com/saadfarooq-alt/CS115-F25" target="_blank">
+        <div class="project-number">03</div>
+        <h3 class="project-title">ISA Co-op Automation Scripts</h3>
+        <p class="project-desc">
+          A collection of Python and Bash scripts built during my co-op term as an ISA. Automates repetitive data and system tasks — showing practical scripting skills applied to real workplace problems.
+        </p>
+        <div class="project-tags">
+          <span class="tag highlight">Automation</span>
+          <span class="tag">Python</span>
+          <span class="tag">Bash</span>
+          <span class="tag">Co-op</span>
+        </div>
+        <span class="project-link">View on GitHub</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills-section">
+      <div>
+        <div class="section-label fade-in">Toolkit</div>
+        <h2 class="section-title fade-in">What I<br/>work with.</h2>
+        <p class="fade-in" style="color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 280px;">
+          My background in combinatorics & optimization gives me a rigorous mathematical foundation that most data analysts don't have.
+        </p>
+      </div>
+      <div class="skills-grid fade-in">
+        <div class="skill-cell">
+          <div class="skill-name">Python</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 92%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Machine Learning</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 80%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Linear Programming / Gurobi</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 85%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Data Visualization</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 75%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Jupyter / Pandas / NumPy</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 88%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Bash / Shell Scripting</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 70%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">SQL</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 72%"></div></div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-name">Git / GitHub</div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--fill: 82%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label fade-in">Get in touch</div>
+        <h2 class="section-title fade-in">Let's build<br/>something<br/><em style="font-family:'DM Serif Display',serif; color:var(--accent);">together.</em></h2>
+      </div>
+      <div class="contact-info fade-in">
+        <div class="contact-row">
+          <span class="contact-key">Email</span>
+          <span class="contact-val"><a href="mailto:s4farooq@uwaterloo.ca">s4farooq@uwaterloo.ca</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key">LinkedIn</span>
+          <span class="contact-val"><a href="https://www.linkedin.com/in/sa-ad-farooq-057a5825b/" target="_blank">sa-ad-farooq ↗</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key">GitHub</span>
+          <span class="contact-val"><a href="https://github.com/saadfarooq-alt" target="_blank">saadfarooq-alt ↗</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key">University</span>
+          <span class="contact-val">University of Waterloo</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-key">Program</span>
+          <span class="contact-val">Combinatorics & Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Sa'ad Farooq</span>
+    <span>Built with HTML/CSS/JS — no frameworks.</span>
+  </footer>
+
+  <script>
+    // Scroll-triggered fade-ins
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          // Animate skill bars
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => bar.classList.add('animate'));
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Also trigger skills on scroll
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => bar.classList.add('animate'));
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.skills-grid').forEach(el => skillsObserver.observe(el));
+  </script>
+</body>
+</html>
