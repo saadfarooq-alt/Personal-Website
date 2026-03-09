@@ -271,7 +271,6 @@
       text-transform: uppercase;
     }
 
-    /* SKILLS AS TAGS */
     .skills-section {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -293,10 +292,8 @@
     }
 
     .skill-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--surface); }
-
     .skill-pill.core { border-color: var(--accent); color: var(--accent); background: var(--surface); }
 
-    /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
     .contact-info { display: flex; flex-direction: column; }
 
@@ -311,16 +308,6 @@
     .contact-key { color: var(--muted); }
     .contact-val a { color: var(--accent); text-decoration: none; }
     .contact-val a:hover { text-decoration: underline; }
-
-    footer {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: 0.05em;
-    }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -352,7 +339,6 @@
       .featured-visual { display: none; }
       .skills-section { grid-template-columns: 1fr; gap: 2rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      footer { flex-direction: column; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -365,7 +351,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#bfcc8bd9decdd0d0ceffcac8decbdacdd3d0d091dcde">Hire Me</a>
+    <a class="btn btn-primary" href="mailto:s4farooq@uwaterloo.ca">Hire Me</a>
   </nav>
 
   <section class="hero" style="border-top: none; padding: 0;">
@@ -502,7 +488,7 @@
       <div class="contact-info fade-in">
         <div class="contact-row">
           <span class="contact-key">Email</span>
-          <span class="contact-val"><a href="/cdn-cgi/l/email-protection#92e1a6f4f3e0fdfde3d2e7e5f3e6f7e0fefdfdbcf1f3"><span class="__cf_email__" data-cfemail="2053144641524f4f51605557415445524c4f4f0e4341">[email&#160;protected]</span></a></span>
+          <span class="contact-val"><a href="mailto:s4farooq@uwaterloo.ca">s4farooq@uwaterloo.ca</a></span>
         </div>
         <div class="contact-row">
           <span class="contact-key">LinkedIn</span>
@@ -524,9 +510,11 @@
     </div>
   </section>
 
-  <footer>
-
-
-  </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><scr
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
