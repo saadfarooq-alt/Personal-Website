@@ -18,7 +18,9 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html::-webkit-scrollbar { display: none; }
+    html { -ms-overflow-style: none; scrollbar-width: none; }
 
     body {
       background: var(--bg);
@@ -244,33 +246,6 @@
       overflow: hidden;
     }
 
-    .chart-bars { display: flex; align-items: flex-end; gap: 8px; height: 180px; padding: 0 20px; }
-
-    .bar {
-      width: 28px;
-      background: var(--accent);
-      opacity: 0.15;
-      border-radius: 2px 2px 0 0;
-      animation: barGrow 1s ease both;
-    }
-
-    .bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
-    .bar:nth-child(2) { height: 85%; animation-delay: 0.2s; opacity: 0.3; }
-    .bar:nth-child(3) { height: 45%; animation-delay: 0.3s; }
-    .bar:nth-child(4) { height: 100%; animation-delay: 0.4s; opacity: 0.6; }
-    .bar:nth-child(5) { height: 70%; animation-delay: 0.5s; opacity: 0.25; }
-    .bar:nth-child(6) { height: 55%; animation-delay: 0.6s; }
-    .bar:nth-child(7) { height: 90%; animation-delay: 0.7s; opacity: 0.4; }
-
-    .chart-label {
-      position: absolute;
-      top: 16px; left: 16px;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
     .skills-section {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -312,11 +287,6 @@
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes barGrow {
-      from { transform: scaleY(0); transform-origin: bottom; }
-      to { transform: scaleY(1); transform-origin: bottom; }
     }
 
     .fade-in {
