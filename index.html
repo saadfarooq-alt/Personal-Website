@@ -44,282 +44,103 @@
       backdrop-filter: blur(12px);
     }
 
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--accent); text-decoration: none; }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
     .nav-email-wrap { display: flex; align-items: center; gap: 0.75rem; }
-
-    .nav-email {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 10px 18px;
-      cursor: pointer;
-      background: transparent;
-      transition: all 0.2s;
-      user-select: none;
-    }
-
+    .nav-email { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.05em; color: var(--text); border: 1px solid var(--border); padding: 10px 18px; cursor: pointer; background: transparent; transition: all 0.2s; user-select: none; }
     .nav-email:hover { border-color: var(--accent); color: var(--accent); }
+    .copy-confirm { font-size: 11px; color: var(--accent); opacity: 0; transition: opacity 0.3s; letter-spacing: 0.05em; }
 
-    .copy-confirm {
-      font-size: 11px;
-      color: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
-      letter-spacing: 0.05em;
-    }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
 
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
-    }
+    .hero-left { padding: 8rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--border); }
 
-    .hero-left {
-      padding: 8rem 4rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-right: 1px solid var(--border);
-    }
+    .hero-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 2rem; width: fit-content; }
 
-    .hero-tag {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      margin-bottom: 2rem;
-      width: fit-content;
-    }
-
-    .hero-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-    }
-
+    .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
     .hero-name em { font-style: italic; color: var(--accent); }
 
-    .hero-desc {
-      color: var(--muted);
-      max-width: 420px;
-      font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 3rem;
-    }
+    .hero-desc { color: var(--muted); max-width: 420px; font-size: 13px; line-height: 1.8; margin-bottom: 3rem; }
 
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    .btn {
-      padding: 12px 24px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
+    .btn { padding: 12px 24px; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent2); }
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-    .hero-right {
-      padding: 8rem 4rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    .hero-right { padding: 8rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center; }
 
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      animation: fadeUp 0.6s ease both;
-    }
-
+    .stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.5rem 0; border-bottom: 1px solid var(--border); animation: fadeUp 0.6s ease both; }
     .stat-row:nth-child(1) { animation-delay: 0.1s; }
     .stat-row:nth-child(2) { animation-delay: 0.2s; }
     .stat-row:nth-child(3) { animation-delay: 0.3s; }
-
     .stat-label { color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
     .stat-value { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); }
 
-    section {
-      padding: 6rem 4rem;
-      border-top: 1px solid var(--border);
-    }
+    section { padding: 6rem 4rem; border-top: 1px solid var(--border); }
 
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
+    .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 3rem; }
 
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 3rem;
-    }
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .project-card {
-      background: var(--bg);
-      padding: 2.5rem;
-      transition: background 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
+    .project-card { background: var(--bg); padding: 2.5rem; transition: background 0.2s; text-decoration: none; color: inherit; display: block; }
     .project-card:hover { background: var(--surface); }
 
-    .project-card.featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
+    .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
 
     .project-number { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1rem; }
-
-    .project-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
+    .project-title { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 1rem; line-height: 1.2; }
     .project-desc { color: var(--muted); font-size: 13px; line-height: 1.8; margin-bottom: 1.5rem; }
-
     .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-    .tag {
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
+    .tag { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--border); color: var(--muted); }
     .tag.highlight { border-color: var(--accent); color: var(--accent); }
 
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      margin-top: 1.5rem;
-    }
-
+    .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; margin-top: 1.5rem; }
     .project-link::after { content: '→'; transition: transform 0.2s; }
     .project-card:hover .project-link::after { transform: translateX(4px); }
 
-    .featured-visual {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
+    .featured-visual { background: var(--surface); border: 1px solid var(--border); height: 260px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
-    .skills-section {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6rem;
-      align-items: start;
-    }
+    /* EXPERIENCE */
+    .experience-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
 
-    .skills-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .exp-item { background: var(--bg); padding: 2.5rem; display: grid; grid-template-columns: 220px 1fr; gap: 3rem; transition: background 0.2s; }
+    .exp-item:hover { background: var(--surface); }
 
-    .skill-pill {
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      padding: 8px 16px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: var(--bg);
-      transition: all 0.2s;
-      cursor: default;
-    }
+    .exp-meta { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 0.2rem; }
+    .exp-date { font-size: 11px; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .exp-company { font-family: 'DM Serif Display', serif; font-size: 1.2rem; line-height: 1.2; margin-top: 0.3rem; }
+    .exp-location { font-size: 11px; color: var(--muted); letter-spacing: 0.03em; margin-top: 0.2rem; }
 
-    .skill-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--surface); }
-    .skill-pill.core { border-color: var(--accent); color: var(--accent); background: var(--surface); }
+    .exp-content { display: flex; flex-direction: column; gap: 0.75rem; }
+    .exp-role { font-size: 12px; letter-spacing: 0.06em; color: var(--text); text-transform: uppercase; }
 
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .exp-bullets li { font-size: 12px; color: var(--muted); line-height: 1.7; padding-left: 1.2rem; position: relative; }
+    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
+
+    /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
     .contact-info { display: flex; flex-direction: column; }
-
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-    }
-
+    .contact-row { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 13px; }
     .contact-key { color: var(--muted); }
     .contact-val a { color: var(--accent); text-decoration: none; }
     .contact-val a:hover { text-decoration: underline; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
@@ -333,7 +154,7 @@
       .projects-grid { grid-template-columns: 1fr; }
       .project-card.featured { grid-column: auto; grid-template-columns: 1fr; }
       .featured-visual { display: none; }
-      .skills-section { grid-template-columns: 1fr; gap: 2rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 1rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
   </style>
@@ -344,7 +165,7 @@
     <a class="nav-logo" href="#">SF</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-email-wrap">
@@ -399,8 +220,8 @@
             <span class="tag highlight">Machine Learning</span>
             <span class="tag highlight">Optimization</span>
             <span class="tag">Python</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">Classification</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Gurobi</span>
             <span class="tag">Healthcare</span>
           </div>
           <span class="project-link">View on GitHub</span>
@@ -414,14 +235,14 @@
         <div class="project-number">02</div>
         <h3 class="project-title">Gurobi LP Graph Converter</h3>
         <p class="project-desc">
-          A visualization tool for Linear Programs using Gurobi — converts abstract LP formulations into interpretable graphs. Bridges the gap between optimization models and intuition for students and industry practitioners.
+          A Python tool to convert graph problems into Gurobi-compatible linear programs — enabling automated optimization for transshipment and network flow problems.
         </p>
         <div class="project-tags">
           <span class="tag highlight">Optimization</span>
           <span class="tag highlight">Visualization</span>
           <span class="tag">Python</span>
           <span class="tag">Gurobi</span>
-          <span class="tag">Linear Programming</span>
+          <span class="tag">NetworkX</span>
         </div>
         <span class="project-link">View on GitHub</span>
       </a>
@@ -430,42 +251,91 @@
         <div class="project-number">03</div>
         <h3 class="project-title">ISA Co-op Automation Scripts</h3>
         <p class="project-desc">
-          A collection of Python and Bash scripts built during my co-op term as an ISA. Automates repetitive data and system tasks — showing practical scripting skills applied to real workplace problems.
+          Production-scale automated grading system in Python and Bash — integrating static code analysis, test-result parsing, and MarkUs CLI automation to process hundreds of student submissions per assignment.
         </p>
         <div class="project-tags">
           <span class="tag highlight">Automation</span>
           <span class="tag">Python</span>
           <span class="tag">Bash</span>
-          <span class="tag">Co-op</span>
+          <span class="tag">MarkUs CLI</span>
         </div>
         <span class="project-link">View on GitHub</span>
       </a>
     </div>
   </section>
 
-  <section id="skills">
-    <div class="skills-section">
-      <div>
-        <div class="section-label fade-in">Toolkit</div>
-        <h2 class="section-title fade-in">What I<br/>work with.</h2>
-        <p class="fade-in" style="color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 280px;">
-          My background in combinatorics & optimization gives me a rigorous mathematical foundation that most data analysts don't have.
-        </p>
+  <section id="experience">
+    <div class="section-label fade-in">Work History</div>
+    <h2 class="section-title fade-in">Where I've<br/>been.</h2>
+
+    <div class="experience-list fade-in">
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">Jan 2026 — Present</span>
+          <span class="exp-company">EdVisingU</span>
+          <span class="exp-location">Pickering, Ontario</span>
+        </div>
+        <div class="exp-content">
+          <span class="exp-role">Operations / Technical Lead</span>
+          <ul class="exp-bullets">
+            <li>Led consulting and technical team to redesign the company website, revamp brand identity, and implement user-focused web experiences.</li>
+            <li>Built and deployed AI-driven automation workflows and intelligent agents using Claude Code and n8n, streamlining operational tasks and enabling actionable business intelligence.</li>
+            <li>Performed technical risk assessments and collaborated with marketing teams to optimize user flows, data tracking, and social media reach.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag highlight">AI Automation</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Claude Code</span>
+            <span class="tag">Web</span>
+          </div>
+        </div>
       </div>
-      <div class="skills-tags fade-in">
-        <span class="skill-pill core">Python</span>
-        <span class="skill-pill core">Machine Learning</span>
-        <span class="skill-pill core">Linear Programming</span>
-        <span class="skill-pill core">Gurobi</span>
-        <span class="skill-pill core">Pandas / NumPy</span>
-        <span class="skill-pill">Jupyter</span>
-        <span class="skill-pill">Data Visualization</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Bash / Shell</span>
-        <span class="skill-pill">Git / GitHub</span>
-        <span class="skill-pill">Classification Models</span>
-        <span class="skill-pill">Combinatorics</span>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">Jan 2025 — Apr 2025 &nbsp;·&nbsp; Sept 2025 — Dec 2025</span>
+          <span class="exp-company">University of Waterloo</span>
+          <span class="exp-location">Waterloo, Ontario</span>
+        </div>
+        <div class="exp-content">
+          <span class="exp-role">CS115 Instructional Support Assistant</span>
+          <ul class="exp-bullets">
+            <li>Built developer tooling for large codebases — recursive function detection, illegal API scanning, and semantic filtering of helper vs. test-only code.</li>
+            <li>Owned the full lifecycle of internal tooling from requirements through deployment, shipping workflow improvements reused across future terms.</li>
+            <li>Built a production-scale automated grading system in Python and Bash, processing hundreds of student submissions per assignment with deterministic, reproducible outcomes.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag highlight">Python</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Static Analysis</span>
+            <span class="tag">MarkUs CLI</span>
+          </div>
+        </div>
       </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">May 2024 — Aug 2024</span>
+          <span class="exp-company">Linamar Corporation</span>
+          <span class="exp-location">Guelph, Ontario</span>
+        </div>
+        <div class="exp-content">
+          <span class="exp-role">IT & Data Analyst</span>
+          <ul class="exp-bullets">
+            <li>Automated reporting workflows using Excel VBA and SQL, saving 35+ hours/month and accelerating month-end close timelines by 30%.</li>
+            <li>Built Power BI dashboards tracking $10M+ in accounts payable and operational KPIs, improving reporting accuracy and decision-making speed.</li>
+            <li>Processed and reconciled 1,000+ vendor invoices and developed 12-week rolling cash flow models, reducing discrepancies by 22%.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag highlight">Power BI</span>
+            <span class="tag highlight">SQL</span>
+            <span class="tag">Excel VBA</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
