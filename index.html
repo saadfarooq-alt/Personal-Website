@@ -62,6 +62,31 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
+    .nav-email-wrap { display: flex; align-items: center; gap: 0.75rem; }
+
+    .nav-email {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .nav-email:hover { border-color: var(--accent); color: var(--accent); }
+
+    .copy-confirm {
+      font-size: 11px;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      letter-spacing: 0.05em;
+    }
+
     .hero {
       min-height: 100vh;
       display: grid;
@@ -300,6 +325,7 @@
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links { display: none; }
+      .nav-email { font-size: 11px; padding: 8px 12px; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 6rem 2rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
       .hero-right { padding: 2rem; }
@@ -321,7 +347,10 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn btn-primary" href="mailto:s4farooq@uwaterloo.ca">Hire Me</a>
+    <div class="nav-email-wrap">
+      <span class="nav-email" onclick="copyEmail()">s4farooq@uwaterloo.ca</span>
+      <span class="copy-confirm" id="copy-confirm">Copied!</span>
+    </div>
   </nav>
 
   <section class="hero" style="border-top: none; padding: 0;">
@@ -476,6 +505,14 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function copyEmail() {
+      navigator.clipboard.writeText('s4farooq@uwaterloo.ca').then(() => {
+        const confirm = document.getElementById('copy-confirm');
+        confirm.style.opacity = '1';
+        setTimeout(() => confirm.style.opacity = '0', 2000);
+      });
+    }
   </script>
 </body>
 </html>
