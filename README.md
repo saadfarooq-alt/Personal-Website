@@ -7,3 +7,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (CREATE NEW PROJECT THAT IMPLEMENTS A CONSOLE THAT HELPS LEARN CONCEPTS LIKE JENKINS MAYBE A CLI OS LIKE IN PRACTICE JENKINS)
 
 (DID PRESENTATINO OF BLUEPRINTS )
+
+(Created jenkins blueprints)
