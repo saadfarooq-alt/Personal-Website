@@ -8,4 +8,6 @@ Constantly working on this, using vercel for live updates, discription has the v
 
 (DID PRESENTATINO OF BLUEPRINTS )
 
-(Created jenkins blueprints)
+(Created jenkins agent for blueprints)
+
+()
