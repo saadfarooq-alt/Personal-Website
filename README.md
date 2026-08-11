@@ -16,4 +16,4 @@ Constantly working on this, using vercel for live updates, discription has the v
 
 (add the projects worked on at swee BI)
 
-
+(fix all projects making grt projects first)
