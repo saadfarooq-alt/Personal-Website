@@ -19,3 +19,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (fix all projects making grt projects first)
 
 (ADD WEBSCRAPING FOR BI)
+
+(ADD R SCRIPTING FOR GSAM PROCESS SAVING MULTIPLE WORKING HOURS AUTOMATING A PROCESS)
