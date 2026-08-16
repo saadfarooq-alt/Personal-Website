@@ -10,8 +10,6 @@ Constantly working on this, using vercel for live updates, discription has the v
 
 (Created jenkins agent for blueprints)
 
-(include Riipen work i did for fullstack ar dev uiux)
-
 (add R scripts for ETL pipeline)
 
 (add the projects worked on at swee BI)
