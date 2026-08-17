@@ -19,5 +19,3 @@ Constantly working on this, using vercel for live updates, discription has the v
 (ADD WEBSCRAPING FOR BI)
 
 (ADD R SCRIPTING FOR GSAM PROCESS SAVING MULTIPLE WORKING HOURS AUTOMATING A PROCESS)
-
-(connect prism resume)
