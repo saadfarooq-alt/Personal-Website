@@ -20,5 +20,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 
 (ADD R SCRIPTING FOR GSAM PROCESS SAVING MULTIPLE WORKING HOURS AUTOMATING A PROCESS)
 
-(dashbaord creation) weak not serving as eng
+(dashbaord creation) more buisesness related
 
