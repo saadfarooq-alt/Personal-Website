@@ -21,5 +21,3 @@ Constantly working on this, using vercel for live updates, discription has the v
 (ADD R SCRIPTING FOR GSAM PROCESS SAVING MULTIPLE WORKING HOURS AUTOMATING A PROCESS)
 
 (Fix vercel booting?) Keep getting emails form vercel for hosting errors 
-
-clear
