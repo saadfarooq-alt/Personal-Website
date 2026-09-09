@@ -23,3 +23,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (Fix vercel booting?) Keep getting emails form vercel for hosting errors 
 
 (ADD ALL BITBUCKET PROJECTS MADE FOR WORK AT BI)
+
+(add all workflows created for web scraping and free goods)
