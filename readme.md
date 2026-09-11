@@ -27,3 +27,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (add all workflows created for web scraping and free goods)
 
 (add confluence post into webpage)
+
+(add how i got my rating and how wade said i have strong technical ability) 
