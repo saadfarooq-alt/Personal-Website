@@ -29,3 +29,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (add confluence post into webpage)
 
 (add how i got my rating and how i hvae to ability to very easily abide to a new tech stack whenever required) 
+
+()
