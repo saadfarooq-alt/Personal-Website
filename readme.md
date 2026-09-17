@@ -28,4 +28,4 @@ Constantly working on this, using vercel for live updates, discription has the v
 
 (add confluence post into webpage)
 
-(add UAT for 30+ people for new app + workflow review for customers )
+(add UAT for 30+ people for new app + workflow review for customers whom use the app we created)
