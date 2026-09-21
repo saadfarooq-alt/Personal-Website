@@ -1,3 +1,7 @@
 All updates are listed in the readme.md but are in a very rough bullet point style, this is a clearer and more concise list. 
 
-  -
+
+Additions:
+ - GRT Project
+ - Full stack AR Dev experience
+ - BI Projects
