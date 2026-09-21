@@ -1,1 +1,3 @@
-All updates are lsited in the readme.md
+All updates are listed in the readme.md but are in a very rough bullet point style, this is a clearer and more concise list. 
+
+  -
