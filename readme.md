@@ -1,4 +1,4 @@
-Constantly working on this, using vercel for live updates, discription has the vercel link
+Constantly working on this, using vercel for live updates, discription has the vercel link. The following list of things are very rough ideas that I need to incorporate into the site:
 
 (ADD GRT APP + FULLSTACK AR DEV (UI/UX))
 
