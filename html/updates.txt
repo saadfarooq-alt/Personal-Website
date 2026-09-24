@@ -5,3 +5,4 @@ Additions:
  - GRT Project
  - Full stack AR Dev experience
  - BI Projects
+ - UI Update
