@@ -31,3 +31,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (add UAT for 30+ people for new app + workflow review for customers whom use the app we created)
 
 (add the api calls made to trigger for each DOH when stock gets low and needs to be refilled from DC's to clinics)
+
+apollo gbs, apollo api graph ql
