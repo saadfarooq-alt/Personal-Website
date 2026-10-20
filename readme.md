@@ -33,3 +33,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (add the api calls made to trigger for each DOH when stock gets low and needs to be refilled from DC's to clinics)
 
 (medallaion architecture that was used to make GPqualiTy)
+
+(add part-time BI employee working on ChatGPqualiTy AI for QA)
