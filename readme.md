@@ -35,3 +35,5 @@ Constantly working on this, using vercel for live updates, discription has the v
 (medallaion architecture that was used to make GPqualiTy)
 
 (add part-time BI employee working on ChatGPqualiTy AI for QA)
+
+(Add the use of aws athena, aws glue, airflow and many other tech uses)
